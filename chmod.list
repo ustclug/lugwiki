@@ -1,1 +1,3 @@
 750     nginx   nginx   /var/log/php-fpm
+751     nginx   nginx   /var/lib/nginx
+711     nginx   nginx   /var/lib/nginx/tmp
