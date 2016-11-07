@@ -68,7 +68,7 @@ rewrite ^/ruoshan/(.*) /wiki/ruoshan/$1 last;
 rewrite ^/zguangyu000/(.*) /wiki/zguangyu000/$1 last;
 
 ## blog
-rewrite ^/blog/(.*) https://news.ustclug.org/$1 permanent;
+rewrite ^/blog(/.*|)$ https://news.ustclug.org$1 permanent;
 
 ## public HTTP access for FTP dirs
 location /ftp/events {
