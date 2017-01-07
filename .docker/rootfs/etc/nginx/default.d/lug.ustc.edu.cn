@@ -102,3 +102,4 @@ rewrite ^/scgy$ /scgy/ permanent;
 rewrite ^/scgy/([^/]*)$ /~guo/scgy/$1 permanent;
 
 rewrite ^/repogen/*$ https://mirrors.ustc.edu.cn/repogen/ permanent;
+rewrite ^/OpenCourse/(.*?)$ https://ftp.ustclug.org/course/ permanent;
