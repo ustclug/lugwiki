@@ -8,6 +8,7 @@ apk add --no-cache \
     php5-mcrypt \
     php5-json \
     php5-xml \
+    php5-zlib \
     git \
     tzdata \
     supervisor \
