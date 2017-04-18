@@ -103,3 +103,6 @@ rewrite ^/scgy/([^/]*)$ /~guo/scgy/$1 permanent;
 
 rewrite ^/repogen/*$ https://mirrors.ustc.edu.cn/repogen/ permanent;
 rewrite ^/OpenCourse/(.*?)$ https://ftp.ustclug.org/course/ permanent;
+
+rewrite ^/sites/opensuse-guide/(.*?)$ https://opensuse-guide.ustclug.org/$1 permanent; 
+rewrite ^/sites/qtguide/(.*?)$ https://qtguide.ustclug.org/$1 permanent; 
