@@ -1,5 +1,7 @@
 root   /var/www;
 
+client_body_temp_path /tmp;
+
 charset utf8;
 
 access_log  /var/log/nginx/access.log;
