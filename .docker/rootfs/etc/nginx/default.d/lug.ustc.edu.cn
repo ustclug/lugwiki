@@ -11,12 +11,7 @@ location / {
 }
 
 ## Per User public_html dir
-location ~ ^/~(.+?)(/.*)?$ {
-    return 301 https://ftp.ustclug.org$request_uri;
-#    alias /home/$1/public_html$2;
-#    index index.php index.html index.htm index.xhtml;
-#    autoindex on;
-}
+rewrite ^/~(.*)$ $scheme://ftp.ustclug.org/~$1 permanent;
 
 ## wiki dir
 location /wiki/ {
