@@ -22,10 +22,17 @@ location /newwiki/ {
     index doku.php;
     try_files $uri $uri/ @newwiki;
 }
+location /oldwiki/ {
+    index doku.php;
+    try_files $uri $uri/ @oldwiki;
+}
 location ~ /wiki/(data|conf|bin|inc)/ {
     deny all;
 }
 location ~ /newwiki/(data|conf|bin|inc)/ {
+    deny all;
+}
+location ~ /oldwiki/(data|conf|bin|inc)/ {
     deny all;
 }
 location @wiki {
@@ -39,6 +46,12 @@ location @newwiki {
     rewrite ^/newwiki/_detail/(.*) /newwiki/lib/exe/detail.php?media=$1 last;
     rewrite ^/newwiki/_export/([^/]+)/(.*) /newwiki/doku.php?do=export_$1&id=$2 last;
     rewrite ^/newwiki/(.*) /newwiki/doku.php?id=$1 last;
+}
+location @oldwiki {
+    rewrite ^/oldwiki/_media/(.*) /oldwiki/lib/exe/fetch.php?media=$1 last;
+    rewrite ^/oldwiki/_detail/(.*) /oldwiki/lib/exe/detail.php?media=$1 last;
+    rewrite ^/oldwiki/_export/([^/]+)/(.*) /oldwiki/doku.php?do=export_$1&id=$2 last;
+    rewrite ^/oldwiki/(.*) /oldwiki/doku.php?id=$1 last;
 }
 
 # added by hosiet 2014-10-28
